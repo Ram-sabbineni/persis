@@ -1,0 +1,115 @@
+.food-card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.food-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.food-card__image-wrap {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #eee8df;
+}
+
+.food-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.food-card__body {
+  padding: 1rem 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.food-card__category {
+  margin: 0 0 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+}
+
+.food-card__title {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.food-card__desc {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  flex: 1;
+}
+
+.food-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.food-card__price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-accent-dark);
+}
+
+.food-card__btn {
+  padding: 0.55rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background 0.15s ease;
+}
+
+.food-card__btn:hover:not(:disabled) {
+  background: var(--color-accent-dark);
+}
+
+.food-card__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.food-card__qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.food-card__qty-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.food-card__qty-value {
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}

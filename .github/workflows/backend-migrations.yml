@@ -1,0 +1,40 @@
+name: Backend DB Migration (Azure SQL)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "backend/**"
+      - ".github/workflows/backend-migrations.yml"
+
+env:
+  DOTNET_VERSION: "8.0.x"
+  API_PROJECT: "backend/Persis.Api/Persis.Api.csproj"
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore
+        run: dotnet restore "${{ env.API_PROJECT }}"
+
+      - name: Install dotnet-ef
+        run: dotnet tool install --global dotnet-ef --version 8.0.11
+
+      - name: Run EF Core migration update
+        env:
+          Database__Provider: "SqlServer"
+          ConnectionStrings__DefaultConnection: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
+        run: |
+          dotnet ef database update \
+            --project "${{ env.API_PROJECT }}" \
+            --startup-project "${{ env.API_PROJECT }}"

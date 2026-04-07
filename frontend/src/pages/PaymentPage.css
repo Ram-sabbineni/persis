@@ -1,0 +1,224 @@
+.payment-page {
+  min-height: 100vh;
+}
+
+.payment-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+}
+
+.payment-back {
+  display: inline-block;
+  border: none;
+  background: none;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0;
+  text-decoration: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.payment-back:hover {
+  color: var(--color-accent);
+}
+
+.payment-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .payment-grid {
+    grid-template-columns: 1fr 340px;
+  }
+}
+
+.payment-form {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.25rem 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.payment-form__title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
+}
+
+.payment-form__note {
+  margin: 0 0 1.25rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.payment-form__api-error {
+  background: #fff5f5;
+  border: 1px solid #f5c2c2;
+  color: var(--color-accent-dark);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.payment-fieldset {
+  border: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+.payment-fieldset legend {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  padding: 0;
+}
+
+.payment-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.payment-field span:first-child {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.payment-field input,
+.payment-field textarea {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.payment-field input:focus,
+.payment-field textarea:focus {
+  outline: 2px solid var(--color-gold-soft);
+  outline-offset: 1px;
+  border-color: var(--color-gold);
+}
+
+.payment-field--error input,
+.payment-field--error textarea {
+  border-color: #c0392b;
+}
+
+.payment-field__err {
+  font-size: 0.8rem;
+  color: #c0392b;
+}
+
+.payment-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .payment-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.payment-form__submit {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.95rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.payment-form__submit:hover:not(:disabled) {
+  background: var(--color-accent-dark);
+}
+
+.payment-form__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.payment-aside {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  position: sticky;
+  top: 5rem;
+}
+
+.payment-aside__title {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+
+.payment-aside__promo {
+  font-size: 0.8rem;
+  background: linear-gradient(135deg, #fff9e6, #fcefc7);
+  border: 1px solid var(--color-gold-soft);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.payment-empty,
+.payment-success {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+}
+
+.payment-empty__title,
+.payment-success__title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+}
+
+.payment-empty__text,
+.payment-success__text {
+  color: var(--color-muted);
+  margin: 0 0 1.25rem;
+}
+
+.payment-empty__btn,
+.payment-success__btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: var(--radius);
+}
+
+.payment-success__card {
+  max-width: 480px;
+  text-align: center;
+  background: var(--color-surface);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.payment-success__actions {
+  margin-top: 1.5rem;
+}

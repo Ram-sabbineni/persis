@@ -1,0 +1,23 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.dbmdl
+*.jfm
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+*.log
+npm-debug.log*
+
+# Local env (keep .env.example committed)
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# OS
+Thumbs.db
+.DS_Store

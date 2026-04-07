@@ -1,0 +1,68 @@
+/* --- Design tokens: warm Indian restaurant palette --- */
+:root {
+  --color-bg: #faf6f0;
+  --color-surface: #ffffff;
+  --color-ink: #1c1410;
+  --color-muted: #5c534c;
+  --color-accent: #8b1e1e;
+  --color-accent-dark: #6b1515;
+  --color-gold: #c9a227;
+  --color-gold-soft: #e8d9a8;
+  --color-border: #e5ddd4;
+  --shadow-sm: 0 2px 8px rgba(28, 20, 16, 0.06);
+  --shadow-md: 0 8px 30px rgba(28, 20, 16, 0.1);
+  --radius: 12px;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--color-ink);
+  background: var(--color-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
