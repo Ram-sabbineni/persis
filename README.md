@@ -2,6 +2,8 @@
 
 Full-stack starter for **Persis Indian Food**: a Vite + React menu/checkout UI and an ASP.NET Core 8 Web API with Entity Framework Core and Azure SQL (or local SQL Server).
 
+**Deploy to Azure (step-by-step):** see [docs/AZURE_DEPLOYMENT.md](docs/AZURE_DEPLOYMENT.md) — Static Web Apps (frontend), App Service (backend), Azure SQL, GitHub Actions, secrets, CORS, and troubleshooting.
+
 ## Repository layout
 
 | Path | Purpose |
